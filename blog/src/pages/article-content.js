@@ -2,6 +2,7 @@ const articlesContent = [
   {
     name: "learn-react",
     title: "The Fastest Way To Learn React",
+    thumbnail: "/images/blog1.jpg",
     content: [
       `React te ayuda a crear interfaces de usuario interactivas de forma sencilla. Diseña vistas simples para cada estado en tu aplicación, y React se encargará de actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien.`,
       `react" at the very idea that they've created a new political entity for themselves.
@@ -14,6 +15,7 @@ const articlesContent = [
   {
     name: "learn-react-2",
     title: "The Fastest Way To Learn React Part 2",
+    thumbnail: "/images/blog2.jpg",
     content: [
       `Los componentes de React implementan un método llamado render() que recibe datos de entrada y retorna qué mostrar. Este ejemplo utiliza una sintaxis similar a XML llamada JSX. Puedes acceder a los datos de entrada que se pasan al componente mediante render() a través de this.props.`,
       `react" at the very idea that they've created a new political entity for themselves.
