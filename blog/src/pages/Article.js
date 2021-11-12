@@ -3,12 +3,13 @@ import { useParams } from 'react-router-dom';
 
 import articlesContent from './article-content';
 import Articles from '../components/Articles';
+import NoMatch from './NoMatch';
 
 const Article = () => {
   
   const { name } = useParams();
   const article = articlesContent.find((article)=> article.name === name);
-  if(!article) { return( <h1 className="sm:text-4xl text-2xl font-bold mt-6 mb-2 text-red-600" > ERROR: Article {name} Does Not Exist</h1> )}
+  if(!article) { return( <NoMatch/> )}
   return (
     <>
       <h1 className="sm:text-4xl text-2xl font-bold mt-6 mb-2 text-gray-900">

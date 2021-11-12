@@ -11,6 +11,7 @@ import About from "./pages/About"
 import ArticlesList from "./pages/ArticlesList"
 import Article from "./pages/Article"
 import Navbar from "./components/Navbar";
+import NoMatch from "./pages/NoMatch";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/about" element={ <About/> }/>
           <Route exact path="/articles-list" element={ <ArticlesList/> }/>
           <Route exact path="/article/:name" element={ <Article/> }/>
+          <Route exact path="*" element={ <NoMatch/> }/>
         </Routes>        
       </div>
     </Router>
