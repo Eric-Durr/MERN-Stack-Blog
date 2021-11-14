@@ -1,4 +1,7 @@
-import React from 'react'
+import "whatwg-fetch" // In order to make fetch work in 
+                      // IE we have to install this package
+
+import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 
 import articlesContent from './article-content';
@@ -6,9 +9,22 @@ import Articles from '../components/Articles';
 import NoMatch from './NoMatch';
 
 const Article = () => {
-  
   const { name } = useParams();
   const article = articlesContent.find((article)=> article.name === name);
+
+  const [articleInfo, setArticleInfo] = useState({ comments: []});
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      const result = await fetch(`http://localhost:8000/api/articles/${name}`);
+      const body = await result.json();
+      setArticleInfo(body);
+      
+    }
+    fetchData();
+  }, [name]);
+
   if(!article) { return( <NoMatch/> )}
   return (
     <>
