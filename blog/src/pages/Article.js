@@ -20,7 +20,7 @@ const Article = () => {
       const result = await fetch(`/api/articles/${name}`);
       const body = await result.json();
       setArticleInfo(body);
-      
+      console.log(body)
     }
     fetchData();
   }, [name]);
