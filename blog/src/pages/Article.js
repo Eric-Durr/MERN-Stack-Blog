@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import articlesContent from './article-content';
 import Articles from '../components/Articles';
 import NoMatch from './NoMatch';
+import CommentsList from "../components/CommentsList";
 
 const Article = () => {
   const { name } = useParams();
@@ -34,7 +35,9 @@ const Article = () => {
       {article.content.map((paragraph, index) =>(
         <p className="mx-auto leading-relaxed text-base mb-4">{paragraph}</p>
       ))}
-      <h1 className="sm:text-2x text-xl font-bold mt-4 mb-4 text-gray-900">Other articles</h1>
+        <CommentsList comments={ !articleInfo ? null : articleInfo.comments} />
+      
+      <h1 className="sm:text-2x text-xl font-bold mt-12 mb-4 text-gray-900">Other articles</h1>
       <div className="flex flex-wrap -m-4">
         <Articles articles={articlesContent.filter(article => article.name !== name )}/>
       </div>  
